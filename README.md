@@ -137,10 +137,12 @@ clarification_data = df[df['generation_method'] == 'cognitive_clarification']
 본 데이터셋을 사용하실 경우 다음과 같이 인용해 주세요:
 
 ```bibtex
-@article{kim2024koacd,
-  title={KoACD: The First Korean Adolescent Dataset for Cognitive Distortion Analysis via Role-Switching Multi-LLM Negotiation},
-  author={Kim, Junseo and Kim, Hye Hyeon},
-  year={2024}
+@inproceedings{kim2025koacd,
+  title={KoACD: The First Korean Adolescent Dataset for Cognitive Distortion Analysis},
+  author={Kim, JunSeo and Kim, HyeHyeon},
+  booktitle={Findings of the Association for Computational Linguistics: EMNLP 2025},
+  year={2025},
+  url={https://arxiv.org/abs/2505.00367}
 }
 ```
 
