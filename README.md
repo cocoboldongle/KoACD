@@ -44,39 +44,6 @@ KoACD/
 └── README.md
 ```
 
-## 데이터 사용법
-
-### Python으로 데이터 로드
-
-```python
-import json
-import pandas as pd
-
-# 데이터 로드
-with open('data/koacd_full_dataset.json', 'r', encoding='utf-8') as f:
-    data = json.load(f)
-
-# DataFrame으로 변환
-df = pd.DataFrame(data)
-
-# 기본 통계
-print(f"총 데이터 수: {len(df)}")
-print(f"인지왜곡 유형 분포:\n{df['cognitive_distortion'].value_counts()}")
-```
-
-### 데이터 필터링
-
-```python
-# 특정 인지왜곡 유형만 추출
-labeling_data = df[df['cognitive_distortion'] == 'Labeling']
-
-# 높은 신뢰도 데이터만 추출
-high_confidence_data = df[df['confidence_score'] == 3]
-
-# 특정 생성 방법 데이터만 추출
-clarification_data = df[df['generation_method'] == 'cognitive_clarification']
-```
-
 ## 방법론
 
 ### Multi-LLM 협상 프레임워크
