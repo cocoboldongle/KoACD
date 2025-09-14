@@ -17,48 +17,30 @@ KoACD는 한국 청소년의 인지왜곡을 분석하기 위한 최초의 대�
 
 ## 데이터셋 구성
 
-| 인지왜곡 유형 | 개수 | 비율 |
-|-------------|-----|-----|
-| 흑백사고 (All-or-Nothing Thinking) | 10,869 | 10.00% |
-| 과잉일반화 (Overgeneralization) | 11,418 | 10.50% |
-| 부정적 편향 (Mental Filtering) | 10,902 | 10.03% |
-| 긍정 축소화 (Discounting the Positive) | 10,695 | 9.84% |
-| 성급한 판단 (Jumping to Conclusions) | 10,662 | 9.81% |
-| 확대와 축소 (Magnification and Minimization) | 10,914 | 10.04% |
-| 감정적 추론 (Emotional Reasoning) | 10,842 | 9.98% |
-| "해야한다" 진술 ("Should" Statements) | 10,695 | 9.84% |
-| 낙인찍기 (Labeling) | 10,836 | 9.97% |
-| 개인화 (Personalization) | 10,884 | 10.01% |
-| **총합** | **108,717** | **100.00%** |
-
-## 데이터 예시
-
-```json
-{
-  "text": "시험 성적이 좋지 않은 내가 찐따일 거야.",
-  "cognitive_distortion": "Labeling",
-  "confidence_score": 3,
-  "generation_method": "cognitive_clarification",
-  "metadata": {
-    "age_group": "16-17",
-    "gender": "male",
-    "validation_score": 3
-  }
-}
-```
+| 인지왜곡 유형 | 인지명료화 (%) | 인지균형화 | 총합 |
+|-------------|---------------|----------|-----|
+| 흑백사고 (All-or-Nothing Thinking) | 5,949 (10.50%) | 4,920 (9.46%) | 10,869 (10.00%) |
+| 과잉일반화 (Overgeneralization) | 11,418 (20.14%) | 0 (0.00%) | 11,418 (10.50%) |
+| 부정적 편향 (Mental Filtering) | 2,763 (4.88%) | 8,139 (15.64%) | 10,902 (10.03%) |
+| 긍정 축소화 (Discounting the Positive) | 822 (1.45%) | 9,873 (18.98%) | 10,695 (9.84%) |
+| 성급한 판단 (Jumping to Conclusions) | 10,479 (18.48%) | 183 (0.35%) | 10,662 (9.81%) |
+| 확대와 축소 (Magnification and Minimization) | 6,078 (10.72%) | 4,836 (9.30%) | 10,914 (10.04%) |
+| 감정적 추론 (Emotional Reasoning) | 10,842 (19.12%) | 0 (0.00%) | 10,842 (9.98%) |
+| "해야한다" 진술 ("Should" Statements) | 2,697 (4.76%) | 7,998 (15.37%) | 10,695 (9.84%) |
+| 낙인찍기 (Labeling) | 2,373 (4.19%) | 8,463 (16.27%) | 10,836 (9.97%) |
+| 개인화 (Personalization) | 3,270 (5.77%) | 7,614 (14.63%) | 10,884 (10.01%) |
+| **총합** | **56,691 (100.00%)** | **52,026 (100.00%)** | **108,717 (100.00%)** |
 
 ## 파일 구조
 
 ```
 KoACD/
-├── data/
-│   ├── koacd_full_dataset.json      # 전체 데이터셋 (108,717개)
-│   ├── koacd_train.json             # 훈련용 데이터
-│   ├── koacd_valid.json             # 검증용 데이터
-│   └── koacd_test.json              # 테스트용 데이터
-├── evaluation/
-│   ├── expert_evaluation.json      # 전문가 평가 결과
-│   └── llm_evaluation.json         # LLM 평가 결과
+├── Cognitive_Balancing_Claude.xlsx    # Claude 3 Haiku 인지균형화 데이터
+├── Cognitive_Balancing_Gemini.xlsx    # Gemini 1.5 Flash 인지균형화 데이터
+├── Cognitive_Balancing_Gpt.xlsx       # GPT-4o mini 인지균형화 데이터
+├── Cognitive_Clarification_Claude.xlsx # Claude 3 Haiku 인지명료화 데이터
+├── Cognitive_Clarification_Gemini.xlsx # Gemini 1.5 Flash 인지명료화 데이터
+├── Cognitive_Clarification_Gpt.xlsx   # GPT-4o mini 인지명료화 데이터
 └── README.md
 ```
 
