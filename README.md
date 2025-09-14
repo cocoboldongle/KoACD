@@ -152,9 +152,3 @@ clarification_data = df[df['generation_method'] == 'cognitive_clarification']
 ## 라이선스
 
 이 데이터셋은 연구 목적으로만 사용 가능합니다. 상세한 라이선스 조건은 [LICENSE](LICENSE) 파일을 참조하세요.
-
-## 감사의 말
-
-- 한국연구재단 (NRF) 연구비 지원 (RS-2024-00459226)
-- 네이버 지식iN 플랫폼의 데이터 제공
-- 전문가 평가에 참여해주신 심리학 전문가분들
