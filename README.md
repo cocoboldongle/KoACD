@@ -1,13 +1,11 @@
 # KoACD: Korean Adolescent Cognitive Distortion Dataset
-
 The first large-scale dataset for cognitive distortion analysis in Korean adolescents
 
 [![Paper](https://img.shields.io/badge/Paper-EMNLP%202025-red.svg)](https://arxiv.org/abs/2505.00367)
-[![Dataset](https://img.shields.io/badge/Dataset-108K-blue.svg)](#)
-[![License](https://img.shields.io/badge/License-CC_BY_4.0-green.svg)](#)
+[![Dataset](https://img.shields.io/badge/🤗%20Dataset-108K-blue.svg)](https://huggingface.co/datasets/kma80kjs1/KoACD)
+[![License](https://img.shields.io/badge/License-CC_BY--NC_4.0-green.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
 ## Overview
-
 KoACD is the first large-scale dataset for cognitive distortion analysis in Korean adolescents.
 
 - **108,717** instances included
@@ -15,8 +13,13 @@ KoACD is the first large-scale dataset for cognitive distortion analysis in Kore
 - **Multi-LLM negotiation** framework utilized
 - **Expert validation** completed
 
-## Dataset Composition
+🤗 The full dataset is available on [HuggingFace](https://huggingface.co/datasets/kma80kjs1/KoACD):
+```python
+from datasets import load_dataset
+ds = load_dataset("kma80kjs1/KoACD")
+```
 
+## Dataset Composition
 | Cognitive Distortion Type | Cognitive Clarification (%) | Cognitive Balancing | Total |
 |---------------------------|------------------------------|-------------------|-------|
 | All-or-Nothing Thinking | 5,949 (10.50%) | 4,920 (9.46%) | 10,869 (10.00%) |
@@ -32,33 +35,29 @@ KoACD is the first large-scale dataset for cognitive distortion analysis in Kore
 | **Total** | **56,691 (100.00%)** | **52,026 (100.00%)** | **108,717 (100.00%)** |
 
 ## File Structure
-
 ```
 KoACD/
-├── Cognitive_Balancing_Claude.xlsx    # Claude 3 Haiku cognitive balancing data
-├── Cognitive_Balancing_Gemini.xlsx    # Gemini 1.5 Flash cognitive balancing data
-├── Cognitive_Balancing_Gpt.xlsx       # GPT-4o mini cognitive balancing data
-├── Cognitive_Clarification_Claude.xlsx # Claude 3 Haiku cognitive clarification data
-├── Cognitive_Clarification_Gemini.xlsx # Gemini 1.5 Flash cognitive clarification data
-├── Cognitive_Clarification_Gpt.xlsx   # GPT-4o mini cognitive clarification data
+├── Cognitive_Balancing_Claude.csv     # Claude 3 Haiku cognitive balancing data
+├── Cognitive_Balancing_Gemini.csv     # Gemini 1.5 Flash cognitive balancing data
+├── Cognitive_Balancing_Gpt.csv        # GPT-4o mini cognitive balancing data
+├── Cognitive_Clarification_Claude.csv # Claude 3 Haiku cognitive clarification data
+├── Cognitive_Clarification_Gemini.csv # Gemini 1.5 Flash cognitive clarification data
+├── Cognitive_Clarification_Gpt.csv    # GPT-4o mini cognitive clarification data
 └── README.md
 ```
 
 ## Methodology
 
 ### Multi-LLM Negotiation Framework
-
 - **Models Used**: Gemini 1.5 Flash, GPT-4o mini, Claude 3 Haiku
 - **Role Switching**: Alternating between Analyzer ↔ Evaluator roles
 - **Negotiation Rounds**: Up to 5 rounds conducted
 - **Bias Reduction**: Improved accuracy through multi-model perspectives
 
 ### Synthetic Data Generation
-
 1. **Cognitive Clarification**
    - Rephrasing original text clearly while preserving meaning
    - 56,691 instances generated
-
 2. **Cognitive Balancing**
    - Addressing imbalanced cognitive distortion distribution
    - 52,026 instances generated
@@ -66,7 +65,6 @@ KoACD/
 ## Evaluation Results
 
 ### LLM vs Human Evaluation Comparison
-
 | Evaluation Criteria | LLM Evaluation | Human Evaluation |
 |-------------------|----------------|------------------|
 | Consistency | 2.287 | 2.278 |
@@ -74,7 +72,6 @@ KoACD/
 | Fluency | 2.598 | 2.815 |
 
 ### Validation Score Distribution
-
 | Score | Count | Percentage |
 |-------|-------|------------|
 | 1 | 11 | 0.06% |
@@ -82,9 +79,7 @@ KoACD/
 | 3 | 18,897 | 95.53% |
 
 ## Citation
-
 If you use this dataset, please cite:
-
 ```bibtex
 @inproceedings{kim2025koacd,
   title={KoACD: The First Korean Adolescent Dataset for Cognitive Distortion Analysis},
@@ -96,10 +91,8 @@ If you use this dataset, please cite:
 ```
 
 ## Contact
-
-- **JunSeo Kim** - kma80kjs@gachon.ac.kr
-- **HyeHyeon Kim** - hye_hyeon@yonsei.ac.kr
+- **JunSeo Kim** - [kma80kjs@gachon.ac.kr](mailto:kma80kjs@gachon.ac.kr)
+- **HyeHyeon Kim** - [hye_hyeon@yonsei.ac.kr](mailto:hye_hyeon@yonsei.ac.kr)
 
 ## License
-
-This dataset is available for research purposes only. Please refer to the [LICENSE](LICENSE) file for detailed license terms.
+This dataset is licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) and is available for **research purposes only**.
